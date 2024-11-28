@@ -6,6 +6,7 @@ Inventory app - music store ( problem set for learning backend )
 - Postgresql
 - Node-postgres
 - EJS
+- Dotenv
 - Vanilla Javascript
 - HTML CSS
 - Koyeb
