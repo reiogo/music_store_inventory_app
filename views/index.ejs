@@ -6,14 +6,17 @@
   <body>
     <%- include('navbar', {links:links}) %>
     <h1> <%= title %></h1>
+    <a href="/category">View by category</a>
     <% if (locals.instruments) { %>
-        <% instruments.forEach((instrument)=>{ %>
+        <% instruments.forEach((instrument) => { %>
         <div class="instrument-div">
-            <p><%= instrument.name %></p>
-            <p><%= instrument.maker %></p>
+            <p><%= instrument.instrument_name %></p>
+            <p><%= instrument.maker_name %></p>
             <p><%= instrument.price %></p>
+            <a href="/details?id=<%= instrument.id %>">Details</a>
         </div>
         <% }); %>
         <% } %>
+        <a href="/form">Add new instrument</a>
   </body>
 </html>

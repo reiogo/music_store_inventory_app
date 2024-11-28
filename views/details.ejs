@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css">
+    <title><%= title %></title>
+  </head>
+  <body>
+    <%- include('navbar', {links:links}) %>
+    <h1> <%= title %></h1>
+    <% if (locals.instruments) { %>
+        <% instruments.forEach((instrument) => { %>
+        <div class="instrument-div">
+            <p>Instrument name: <%= instrument.instrument_name %></p>
+            <p>Maker name: <%= instrument.maker_name %></p>
+            <p>Price: <%= instrument.price %></p>
+            <p>Category: <%= instrument.i_category %></p>
+            <p>Post created by: <%= instrument.username %></p>
+        </div>
+
+        <form action="/delete?id=<%= instrument.id %>" method="post">
+            <button type="submit" name="delete">
+               Delete Instrument
+            </button>
+        </form>
+        <% }); %>
+        <% } %>
+  </body>
+</html>
